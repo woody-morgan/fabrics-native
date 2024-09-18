@@ -6,15 +6,7 @@
       "@/*": ["./src/*"]
     },
     "allowImportingTsExtensions": false,
-    "module": "esnext",
+    "module": "esnext"
   },
-  "include": [
-    "./src/**/*",
-    "index.d.ts",
-    ".eslintrc.js",
-    "jest.setup.js",
-    "jest.config.js",
-    "babel.config.js",
-    "index.js"
-  ],
+  "include": ["./src/**/*", "index.d.ts", ".eslintrc.js", "jest.setup.js", "jest.config.js", "babel.config.js", "index.js", "nativewind-env.d.ts", "tailwind.config.js", "postcss.config.js"]
 }

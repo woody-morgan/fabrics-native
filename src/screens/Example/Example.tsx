@@ -2,7 +2,7 @@ import { View, Text, ScrollView } from "react-native";
 import { useTranslation } from "react-i18next";
 import { SafeScreen } from "@/components/layout/SafeScreen";
 
-function Example() {
+export function Example() {
   const { t } = useTranslation(["example", "welcome"]);
 
   return (
@@ -17,5 +17,3 @@ function Example() {
     </SafeScreen>
   );
 }
-
-export default Example;

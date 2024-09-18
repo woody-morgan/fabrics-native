@@ -1,13 +1,13 @@
-import { View } from "react-native";
+import { ActivityIndicator, View } from "react-native";
 
 import { SafeScreen } from "@/components/layout/SafeScreen";
 
-function Startup() {
+export function Startup() {
   return (
     <SafeScreen>
-      <View>{/* <ActivityIndicator size="large" /> */}</View>
+      <View className="bg-red-500">
+        <ActivityIndicator size="large" />
+      </View>
     </SafeScreen>
   );
 }
-
-export default Startup;
