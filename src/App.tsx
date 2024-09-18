@@ -1,24 +1,22 @@
-import 'react-native-gesture-handler';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { MMKV } from 'react-native-mmkv';
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
-import { ThemeProvider } from '@/theme';
+import { Example, Startup } from "@/screens";
 
-import ApplicationNavigator from './navigators/Application';
-import './translations';
+import type { RootStackParamList } from "@/types/navigation";
 
-export const queryClient = new QueryClient();
+const Stack = createStackNavigator<RootStackParamList>();
 
-export const storage = new MMKV();
-
-function App() {
-	return (
-		<QueryClientProvider client={queryClient}>
-			<ThemeProvider storage={storage}>
-				<ApplicationNavigator />
-			</ThemeProvider>
-		</QueryClientProvider>
-	);
+export function App() {
+  return (
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Startup" component={Startup} />
+          <Stack.Screen name="Example" component={Example} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
 }
-
-export default App;
